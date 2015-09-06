@@ -129,7 +129,7 @@
 
           
           
-<form method="post" name="contact_form" action="sendtophp()">
+<form method="post" name="contact_form">
 								<div class="row half">
 									<div class="12u">
 										<input class="text" type="text" name="email" id="email" value="" placeholder="email">
@@ -169,11 +169,12 @@
   <script>
         $("#submit").click( function()
            {
+           	alert('sent');
                  $.ajax ({
         			url: "contact.php",
         			data: { email : document.getElementById("email") }, //optional
         			success: function( result ) {
-            //do something after you receive the result
+            				alert('Submitted!');
         			}});
            }
         );
