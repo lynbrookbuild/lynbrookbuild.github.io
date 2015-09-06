@@ -126,28 +126,22 @@
       <h2 class="dividing-line">-</h2>
       <center><p class="text">"Don't just CODE. BUILD."</p></center><a class="button green float-left" href="#" data-ix="hidden-form-appear">sign up for our mailing list!</a>
       <div class="hidden-form" data-ix="hidden-section-dissapear">
-
-          
-          
-<form method="post" name="contact_form">
-								<div class="row half">
-									<div class="12u">
-										<input class="text" type="text" name="email" id="email" value="" placeholder="email">
-									</div>
-								</div>
-								<div class="row">
-									<div class="12u">
-										<ul class="actions">
-											<li><button type="submit" id="submit">click</button></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-                    
-                    
-                    
-                    
- 
+        <div class="w-form">
+          <form id="mailing-list-form" name="wf-form-contact-form" data-name="Contact Form">
+            <h3>join our mailing list!</h3>
+            <h3 class="w-hidden-main w-hidden-medium w-hidden-small">contact us</h3>
+            <label class="field-label mailing-list-label" for="mailing-list-field">Your Email (required)</label>
+            <input class="w-input text-field mailing-list-field" id="mailing-list-field" type="email" name="email" data-name="Email" required="required">
+            <p class="small-paragraph mailing-list-paragraph">*We send one or two emails a month.</p>
+            <input class="w-button button orange" type="submit" value="Submit" data-wait="Please wait...">
+          </form>
+          <div class="w-form-done success-message">
+            <p>Thank you! You have been added to our mailing list!</p>
+          </div>
+          <div class="w-form-fail success-message">
+            <p>Oops! Something went wrong while submitting the form :(</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -156,7 +150,7 @@
     <div class="container">
       <div class="w-row">
         <div class="w-col w-col-5">
-          <h4>BUILD<a class="link" target="_blank" href="http://www.throughflow.co.uk"></a></h4>
+          <h4>BUILD</h4>
         </div>
         <div class="w-col w-col-7">
           <h4 class="footer-links"><a href="#top" class="link">top</a> | <a class="link" href="#about">about</a> | <a class="link" href="#the-team">the team</a> | <a class="link" href="#subscribe">subscribe</a></h4>
@@ -166,20 +160,6 @@
   </footer>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="webflow.js"></script>
-  <script>
-        $("#submit").click( function()
-           {
-           	alert(document.getElementById("email"));
-                 $.ajax ({
-        			url: "contact.php",
-					type:"POST",
-        			data: { email : document.getElementById("email") }, //optional
-        			success: function( result ) {
-            				alert('Submitted!');
-        			}});
-           }
-        );
-  </script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
