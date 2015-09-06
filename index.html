@@ -127,13 +127,26 @@
       <center><p class="text">"Don't just CODE. BUILD."</p></center><a class="button green float-left" href="#" data-ix="hidden-form-appear">sign up for our mailing list!</a>
       <div class="hidden-form" data-ix="hidden-section-dissapear">
         <div class="w-form">
-          <form id="mailing-list-form" name="wf-form-contact-form" data-name="Contact Form" action="contact.php">
-            <h3>join our mailing list!</h3>
-            <h3 class="w-hidden-main w-hidden-medium w-hidden-small">contact us</h3>
-            <label class="field-label mailing-list-label" for="mailing-list-field">Your Email (required)</label>
-            <input class="w-input text-field mailing-list-field" id="email" type="email" name="email" data-name="Email" required="required">
-            <button type="submit" value="Submit" data-wait="Please wait...">
-          </form>
+          
+          
+<form name="sentMessage" id="contactForm" novalidate="" action="contact.php">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group error">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required="" data-validation-required-message="Please enter your email address." aria-invalid="true">
+                                    <p class="help-block text-danger"><ul role="alert"><li>Please enter your email address.</li></ul></p>
+                                </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    
+                    
+                    
         </div>
       </div>
     </div>
