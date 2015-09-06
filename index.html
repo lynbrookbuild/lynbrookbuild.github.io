@@ -126,22 +126,12 @@
       <h2 class="dividing-line">-</h2>
       <center><p class="text">"Don't just CODE. BUILD."</p></center><a class="button green float-left" href="#" data-ix="hidden-form-appear">sign up for our mailing list!</a>
       <div class="hidden-form" data-ix="hidden-section-dissapear">
-        <div class="w-form">
-          <form id="mailing-list-form" name="wf-form-contact-form" data-name="Contact Form" action="contact.php">
-            <h3>join our mailing list!</h3>
-            <h3 class="w-hidden-main w-hidden-medium w-hidden-small">contact us</h3>
-            <label class="field-label mailing-list-label" for="mailing-list-field">Your Email (required)</label>
-            <input class="w-input text-field mailing-list-field" id="mailing-list-field" type="email" name="email" data-name="Email" required="required">
-            <p class="small-paragraph mailing-list-paragraph">*We send one or two emails a month.</p>
-            <input class="w-button button orange" type="submit" value="Submit" data-wait="Please wait...">
-          </form>
-          <div class="w-form-done success-message">
-            <p>Thank you! You have been added to our mailing list!</p>
+        <div class="form">
+<form name="contact" method="post" action="contact.php" onsubmit="return validateForm()">
+            <input class="input-text" type="text" name="email" value="Your E-mail *" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+            <input class="input-btn" type="submit" value="send message">
+            </form>
           </div>
-          <div class="w-form-fail success-message">
-            <p>Oops! Something went wrong while submitting the form :(</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -160,6 +150,24 @@
   </footer>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="webflow.js"></script>
+  <script>
+  
+function validateForm() {
+    var name = document.forms["contact"]["name"].value;
+	var email = document.forms["contact"]["email"].value;
+	var message = document.forms["contact"]["message"].value;
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (name == null || name == "" || email == null || email == "" || ! re.test(email) || message == null || message == "") {
+        alert("One or more of the fields have been entered incorrectly. Please try again!");
+        return false;
+    }
+	else
+	{
+		return true;
+	}
+	
+}
+</script>
   <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
