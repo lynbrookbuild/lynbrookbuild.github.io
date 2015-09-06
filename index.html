@@ -169,9 +169,10 @@
   <script>
         $("#submit").click( function()
            {
-           	alert('sent');
+           	alert(document.getElementById("email"));
                  $.ajax ({
         			url: "contact.php",
+					type:"POST",
         			data: { email : document.getElementById("email") }, //optional
         			success: function( result ) {
             				alert('Submitted!');
